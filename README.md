@@ -14,21 +14,29 @@ API desenvolvida durante a trilha de estudos da Alura,onde apliquei os conhecime
 
 ## Pre-requisitos :gear:
 
-Você precisa ter instalado o 
+Você precisa ter instalado: 
 
 ```
-Node e o npm
+Node, Npm e MySQL
 ```
 
 Para instalar consulte: 
 * [Node](https://nodejs.org/en/)
+* [MySQL](https://dev.mysql.com/downloads/mysql/)
 
-### Baixando o projeto
+Na sequência crie um banco de dados:
+
+```
+create database escola_ingles; 
+```
+para saber mais [consulte](https://www.devmedia.com.br/primeiros-passos-no-mysql/28438) 
+
+### Baixando e configurando o projeto :open_file_folder:
 
 ```
 git clone git@github.com:Joely-Brito/API-escola-ingles.git
 ```
-After:
+Depois:
 ```
 cd API-escola-ingles/
 ```
@@ -37,9 +45,22 @@ Na sequencia, instale as dependências
 npm install
 ```
 
+No arquivo de configuração (api/config/config.json), coloque o seu usuário e senha do MySQL no objeto "development".
+
+**Criando Tabelas no banco de dados:**
+
+No terminal rode:
 
 ```
-npm install
+npx sequelize-cli db:migrate  
+```
+
+**Populando as tabelas:**
+
+No terminal rode:
+
+```
+npx sequelize-cli db:seed:all
 ```
 
 ## Rodando a API :rocket:
